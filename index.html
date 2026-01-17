@@ -1,0 +1,124 @@
+
+You said:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Editor - Interactive Demo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🎬 AI Video Editor - Interactive Demo</h1>
+        <p>Experience automated talking-head video editing powered by AI</p>
+    </div>
+
+    <div class="main-content">
+
+        <!-- LEFT PANEL -->
+        <div class="panel">
+
+            <h2>📹 Video Preview</h2>
+
+            <!-- VIDEO PREVIEW -->
+            <div class="video-preview">
+                <div class="video-content">
+                    <div id="videoFrame">
+                        <p style="color:#888;">No video selected</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPORT BUTTON -->
+            <div class="import-section">
+                <input 
+                    type="file"
+                    id="videoInput"
+                    accept="video/*"
+                    hidden
+                    onchange="handleVideoImport(event)"
+                >
+                <button class="btn btn-secondary" onclick="document.getElementById('videoInput').click()">
+                    📁 Import Video
+                </button>
+            </div>
+
+            <!-- CONTROLS -->
+            <div class="controls">
+                <button class="btn btn-primary" onclick="startProcessing()">▶ Start Processing</button>
+                <button class="btn btn-secondary" onclick="exportVideo()">⬇ Export Video</button>
+            </div>
+
+            <!-- INFO PANEL -->
+            <div class="info-panel">
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span class="info-value" id="statusText">Ready</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Segments:</span>
+                    <span class="info-value" id="segmentCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Enhancements:</span>
+                    <span class="info-value" id="enhancementCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value" id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="panel2">
+
+            <h2>💬 Chat Interface</h2>
+
+            <div class="chat-interface">
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message system">
+                        👋 Welcome! Import a video, process it, then refine it using natural language commands.
+                    </div>
+                </div>
+
+                <div class="suggestions">
+                    <button class="suggestion-btn" onclick="sendCommand('make captions bolder')">
+                        Make captions bolder
+                    </button>
+                    <button class="suggestion-btn" onclick="sendCommand('change color to yellow')">
+                        Change color to yellow
+                    </button>
+                    <button class="suggestion-btn" onclick="sendCommand('add a title')">
+                        Add a title
+                    </button>
+                </div>
+
+                <div class="chat-input">
+                    <input 
+                        type="text"
+                        id="commandInput"
+                        placeholder="Type a command... (e.g., 'make captions bolder')"
+                        onkeypress="handleKeyPress(event)"
+                    >
+                    <button class="btn btn-primary" onclick="sendCommand()">Send</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
