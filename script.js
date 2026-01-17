@@ -39,7 +39,7 @@ function startProcessing() {
 
         if (segments >= 5) {
             clearInterval(interval);
-            document.getElementById("statusext").innerText = "Processing Complete";
+            document.getElementById("statusText").innerText = "Processing Complete";
             document.getElementById("duration").innerText = "2:34";
         }
     }, 600);
@@ -73,4 +73,3 @@ function handleKeyPress(event) {
         sendCommand();
     }
 }
-
