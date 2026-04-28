@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Video Editor</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>AI Video Editor</h1>
+        <p>Upload, auto-process, then refine with chat commands.</p>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <h2>Upload + Process</h2>
+          <input id="videoInput" type="file" accept="video/*" />
+          <button id="processBtn">Process video</button>
+          <p id="status">Status: idle</p>
+          <pre id="result"></pre>
+        </section>
+
+        <section class="card">
+          <h2>Command Editor</h2>
+          <div class="row">
+            <input id="commandInput" type="text" placeholder="make captions bolder" />
+            <button id="sendBtn">Send</button>
+          </div>
+          <div class="chips">
+            <button data-cmd="make captions bolder">Bolder captions</button>
+            <button data-cmd="change color to yellow">Yellow captions</button>
+            <button data-cmd="add title">Add title</button>
+          </div>
+          <pre id="commandResult"></pre>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

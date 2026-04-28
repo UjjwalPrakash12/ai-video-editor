@@ -1,0 +1,19 @@
+* { box-sizing: border-box; font-family: Inter, system-ui, sans-serif; }
+body { margin: 0; background: #0b1020; color: #e6edf7; }
+.container { max-width: 1040px; margin: 0 auto; padding: 24px; }
+header h1 { margin: 0 0 6px; }
+header p { margin: 0 0 24px; color: #9fb0d2; }
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+.card { background: #131b2d; border: 1px solid #253150; border-radius: 12px; padding: 16px; }
+h2 { margin-top: 0; font-size: 18px; }
+input, button { border-radius: 8px; border: 1px solid #34456e; }
+input { width: 100%; padding: 10px; background: #0f1627; color: #e6edf7; }
+button { padding: 10px 12px; background: #3c63dd; color: white; cursor: pointer; }
+button:hover { background: #2f55cf; }
+#processBtn { margin-top: 10px; width: 100%; }
+.row { display: flex; gap: 8px; }
+.chips { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.chips button { background: #1f2f55; border-color: #324878; }
+pre { white-space: pre-wrap; background: #0d1422; border: 1px solid #22304f; border-radius: 8px; padding: 10px; min-height: 110px; color: #c9d8f8; }
+#status { color: #9fb0d2; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
